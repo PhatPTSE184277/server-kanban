@@ -1,4 +1,3 @@
-import { create } from "domain";
 import mongoose, { Schema } from "mongoose";
 
 const UserScheme = new Schema({
@@ -14,6 +13,10 @@ const UserScheme = new Schema({
         type: String,
         required: true
     },
+    rule: {
+        type: Number,
+        default: 1
+    },
     createdAt: {
         type: Date,
         default: Date.now
@@ -24,6 +27,6 @@ const UserScheme = new Schema({
     }
 })
 
-const UserModel = mongoose.model("users", UserScheme);
+const UserModel = mongoose.model('users', UserScheme);
 
 export default UserModel;
